@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel serve src/**/*.html --port 8080 --cache-dir .cache --dist-dir build",
     "build": "parcel build src/**/*.html --cache-dir .cache --dist-dir build",
-    "clean": "rm -rf .cache/ build/"
+    "clean": "rm -rf .cache/ build/",
+    "publish": "npm run build && surge ./build/ http://evanoc3.com"
   },
   "devDependencies": {
     "parcel": "^2.0.0-beta.1",
