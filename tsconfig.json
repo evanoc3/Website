@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext"
+	},
+	"include": [
+		"src/"
+	],
+	"exclude": [
+		".cache/",
+		"build/",
+		"node_modules/"
+	]
+}
