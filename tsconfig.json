@@ -1,13 +1,21 @@
 {
 	"compilerOptions": {
+		"baseUrl": "./",
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"jsxFactory": "h",
 		"module": "ESNext",
 		"moduleResolution": "node",
+		"noEmit": true,
+		"paths": {
+			"/components/*": [ "src/components/*" ]
+		},
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "ESNext"
 	},
 	"include": [
-		"src/"
+		"src/**/*"
 	],
 	"exclude": [
 		".cache/",
