@@ -1,0 +1,23 @@
+{
+  "author": "Evan O'Connor <evanoc3@gmail.com>",
+  "dependencies": {
+  },
+  "engines": {
+    "node": ">=16.4.1",
+    "npm": ">=7.20.3"
+  },
+  "license": "MIT",
+  "name": "@evanoc3/website",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanoc3/website"
+  },
+  "scripts": {
+    "start": "",
+    "build": "rm -rf ./build/* && ",
+    "deploy": "rsync -av ./build/ VPS:/var/www/evanoconnor.ie/ --delete",
+    "deploy:config": "rsync -av ./evanoconnor.ie.conf VPS:/etc/nginx/sites-available/"
+  },
+  "version": "0.1.0"
+}
