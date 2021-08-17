@@ -1,0 +1,13 @@
+#splash__wrapper {
+	position: relative;
+	overflow: hidden;
+	height: 80vh;
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+
+
+	#splash__img {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+}

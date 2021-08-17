@@ -1,7 +1,5 @@
 {
   "author": "Evan O'Connor <evanoc3@gmail.com>",
-  "dependencies": {
-  },
   "engines": {
     "node": ">=16.4.1",
     "npm": ">=7.20.3"
@@ -14,10 +12,16 @@
     "url": "https://github.com/evanoc3/website"
   },
   "scripts": {
-    "start": "",
-    "build": "rm -rf ./build/* && ",
+    "start": "parcel serve \"src/**/*.html\" --cache-dir .cache --dist-dir build --port 8080",
+    "build": "rm -rf ./build/* && parcel build \"src/**/*.html\" --cache-dir .cache --dist-dir build",
     "deploy": "rsync -av ./build/ VPS:/var/www/evanoconnor.ie/ --delete",
     "deploy:config": "rsync -av ./evanoconnor.ie.conf VPS:/etc/nginx/sites-available/"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0",
+    "sass": "^1.37.5"
+  }
 }
