@@ -3,7 +3,7 @@
   "dependencies": {
   },
   "engines": {
-    "node": ">=16.4.1",
+    "node": ">=16.6.2",
     "npm": ">=7.20.3"
   },
   "license": "MIT",
