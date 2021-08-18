@@ -10,15 +10,55 @@
 	</head>
 
 	<body>
+		<!-- #region Header -->
+		<header id="header">
+			<h1 id="header__title" class="dark">Evan O'Connor</h1>
 
-		<!-- Splash Image -->
+			<div class="header__spacer"></div>
+		</header>
+		<!-- #endregion Header -->
+
+		<!-- #region Splash Image -->
 		<div id="splash__wrapper">
 			<picture>
 				<source srcset="/src/assets/images/UoLiXW_QWWY@1920w.webp 1920w, /src/assets/images/UoLiXW_QWWY@2400w.webp 2400w, /src/assets/images/UoLiXW_QWWY@5938w.webp 5938w" type="image/webp" />
-				<img src="/src/assets/images/UoLiXW_QWWY@1920w.jpg" srcset="/src/assets/images/UoLiXW_QWWY@2400w.jpg 2400w, /src/assets/images/UoLiXW_QWWY@5938w.jpg 5938w" id="splash__img" />
+				<img src="/src/assets/images/UoLiXW_QWWY@1920w.jpg" srcset="/src/assets/images/UoLiXW_QWWY@2400w.jpg 2400w, /src/assets/images/UoLiXW_QWWY@5938w.jpg 5938w" id="splash__img" draggable="false" />
 			</picture>
-		</div>
-		<!-- End Splash Image -->
 
+			<div id="splash__arrow"></div>
+		</div>
+		<!-- #endregion Splash Image -->
+
+		<!-- #region Socials Row -->
+		<div id="connect__wrapper">
+			<a href="https://www.linkedin.com/in/evanoc3/" title="Linkedin" class="connect__link" id="connect__icon-linkedin">
+				<img src="/src/assets/icons/linkedin.svg" class="connect__link__icon" alt="Linkedin" />
+			</a>
+
+			<a href="https://github.com/evanoc3" title="Github" class="connect__link" id="connect__icon-github">
+				<img src="/src/assets/icons/github.svg" class="connect__link__icon" alt="Github" />
+			</a>
+
+			<a href="#twitter" title="Twitter" class="connect__link" id="connect__icon-twitter">
+				<img src="/src/assets/icons/twitter.svg" class="connect__link__icon" alt="Twitter" />
+			</a>
+
+			<a href="https://open.spotify.com/user/evanoconnor99" title="Spotify" class="connect__link" id="connect__icon-spotify">
+				<img src="/src/assets/icons/spotify.svg" class="connect__link__icon" alt="Spotify" />
+			</a>
+
+			<a href="https://getpocket.com/@a8dp9T99A9e4cd5b34gzyPUg2dd7A363894Ol4vcQyJd3fZ34297ake4UafaR250" title="Pocket" class="connect__link" id="connect__icon-pocket">
+				<img src="/src/assets/icons/pocket.svg" class="connect__link__icon" alt="Pocket" />
+			</a>
+
+			<a href="mailto:evan@evanoconnor.ie" title="Email" class="connect__link" id="connect__icon-mail">
+				<img src="/src/assets/icons/mail.svg" class="connect__link__icon" alt="Email" />
+			</a>
+		</div>
+		<!-- #endregion Socials Row-->
+	
+		<div style="height: 50rem"></div>
 	</body>
+
+	<script src="/src/scripts/header.js"></script>
 </html>

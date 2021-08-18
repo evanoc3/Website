@@ -1,13 +1,176 @@
+@use "/src/styles/modules/breakpoints";
+
+
+body {
+	overflow-y: auto;
+}
+
+
+/* #region Header */
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	padding: 3rem 4rem;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	opacity: 0;
+	animation-name: appear;
+	animation-duration: 1s;
+	animation-timing-function: ease-in;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+
+	@keyframes appear {
+		0% {
+			opacity: 0
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	&.header__visible {
+		opacity: 1;
+	}
+
+	#header__title {
+		font-size: 3rem;
+		color: white;
+		font-weight: 500;
+		transition: color 0.5s;
+
+		&.dark {
+			color: black !important;
+		}
+	}
+
+	.header__spacer {
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+}
+/* #endregion Header */
+
+
+/* #region Splash Image */
 #splash__wrapper {
 	position: relative;
 	overflow: hidden;
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7.5rem), 50% 100%, 0 calc(100% - 7.5rem));
 	height: 80vh;
-	clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 
+	@media(min-width: breakpoints.$desktop) {
+		height: 80vh;
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7.5rem), 50% 100%, 0 calc(100% - 7.5rem));
+	}
 
 	#splash__img {
 		position: absolute;
 		bottom: 0;
+		min-width: 100%;
+	}
+
+	@keyframes fade-in-bounce {
+		0% {
+			opacity: 0;
+			transform: translateY(0);
+		}
+
+		33% {
+			opacity: 0.5;
+			transform: translateY(-0.2rem);
+		}
+
+		66% {
+			opacity: 1;
+			transform: translateY(0.2rem);
+		}
+
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	#splash__arrow {
+		position: absolute;
+		bottom: 1rem;
+		z-index: 11;
 		width: 100%;
+		height: 9rem;
+		background-color: white;
+		clip-path: polygon(45% 6.75rem, 50% 7.5rem, 55% 6.75rem, 55% 8.25rem, 50% 9rem, 45% 8.25rem);
+		animation-name: fade-in-bounce;
+		animation-delay: 1s;
+		animation-duration: 1.5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		opacity: 0;
 	}
 }
+/* #endregion Splash Image */
+
+
+/* #region Socials Row */
+div#connect__wrapper {
+	margin-top: 5rem;
+	background-color: #efefef;
+	padding: 2rem;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+
+
+	.connect__link {
+		display: block;
+		width: 6rem;
+		height: 6rem;
+
+
+		> .connect__link__icon {
+			width: 2rem;
+			height: 2rem;
+			margin: 2rem;
+			transition: 0.5s;
+		}
+
+		&:hover > .connect__link__icon {
+			width: 2.5rem;
+			height: 2.5rem;
+			margin: 1.75rem;
+		}
+		
+
+		&#connect__icon-twitter {
+			background-color: #1DA1F2;
+		}
+
+		&#connect__icon-linkedin {
+			background-color: #0A66C2;
+		}
+
+		&#connect__icon-github {
+			background-color: #181717;
+		}
+
+		&#connect__icon-spotify {
+			background-color: #1ed760;
+		}
+
+		&#connect__icon-pocket {
+			background-color: #EF3F56;
+		}
+
+		&#connect__icon-mail {
+			background-color: #666;
+		}
+	}
+
+
+}
+/* #endregion Socials Row */
