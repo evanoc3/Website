@@ -1,4 +1,8 @@
+@use "sass:color";
+@use "sass:map";
 @use "/src/styles/modules/breakpoints";
+@use "/src/styles/modules/colours";
+@use "/src/styles/modules/ui";
 
 
 body {
@@ -104,7 +108,9 @@ body {
 		width: 100%;
 		height: 9rem;
 		background-color: white;
-		clip-path: polygon(45% 6.75rem, 50% 7.5rem, 55% 6.75rem, 55% 8.25rem, 50% 9rem, 45% 8.25rem);
+		// clip-path: polygon(45% 6.75rem, 50% 7.5rem, 55% 6.75rem, 55% 8.25rem, 50% 9rem, 45% 8.25rem);
+
+		clip-path: polygon(40% 7.5rem, 60% 7.5rem, 50% 9rem);
 		animation-name: fade-in-bounce;
 		animation-delay: 1s;
 		animation-duration: 1.5s;
@@ -161,10 +167,30 @@ body {
 /* #endregion Socials Row */
 
 
+/* #region Footer */
+#footer {
+	@include ui.secondary-box;
+	margin-top: 5rem;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	line-height: 1.5;
 
+	@media(min-width: breakpoints.$tablet) {
+		padding: 3rem 5rem;
+		flex-flow: row nowrap;
+	}
 
+	> .footer__column {
+		flex: 1;
 
+		&#footer__column-right {
+			text-align: right;
 
+			a {
+				color: map.get(colours.$font, "footer", "link", "regular");
+			}
 		}
 	}
 }
+/* #endregion Footer */

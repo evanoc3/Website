@@ -1,0 +1,31 @@
+@use "sass:color";
+
+
+/* #region Font Colours */
+$font: (
+	"regular": #111,
+	"footer": (
+		"regular": #a7a7a7,
+		"link": (
+			"regular": color.scale(#a7a7a7, $lightness: -25%)
+		)
+	)
+);
+/* #endregion Font Colours */
+
+
+/* #region Background Colours */
+$background: (
+	"regular": #fff,
+	"secondary": #f3f3f3
+);
+/* #endregion Background Colours */
+
+
+$palette: (
+	"pale": #b7d2dd,
+	"dark": #07345b,
+	"purple": #82688b,
+	"gold": #f0b066,
+	"pink": #dd9394
+)
