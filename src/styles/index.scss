@@ -117,60 +117,54 @@ body {
 
 
 /* #region Socials Row */
-div#connect__wrapper {
+#connect__wrapper {
+	@include ui.secondary-box;
 	margin-top: 5rem;
-	background-color: #efefef;
-	padding: 2rem;
 	display: flex;
-	flex-flow: row wrap;
 	justify-content: center;
 
+	#connect__row {
+		display: inline-flex;
+		max-width: 100%;
+		flex-flow: row wrap;
+		justify-content: flex-start;
 
-	.connect__link {
-		display: block;
-		width: 6rem;
-		height: 6rem;
-
-
-		> .connect__link__icon {
-			width: 2rem;
-			height: 2rem;
-			margin: 2rem;
-			transition: 0.5s;
-		}
-
-		&:hover > .connect__link__icon {
-			width: 2.5rem;
-			height: 2.5rem;
-			margin: 1.75rem;
-		}
-		
-
-		&#connect__icon-twitter {
-			background-color: #1DA1F2;
-		}
-
-		&#connect__icon-linkedin {
-			background-color: #0A66C2;
-		}
-
-		&#connect__icon-github {
-			background-color: #181717;
-		}
-
-		&#connect__icon-spotify {
-			background-color: #1ed760;
-		}
-
-		&#connect__icon-pocket {
-			background-color: #EF3F56;
-		}
-
-		&#connect__icon-mail {
-			background-color: #666;
+		.connect__link {
+			display: block;
+			width: 6rem;
+			height: 6rem;
+	
+			> .connect__link__icon {
+				width: 2rem;
+				height: 2rem;
+				margin: 2rem;
+				transition: 0.5s;
+			}
+	
+			&:hover > .connect__link__icon {
+				width: 2.5rem;
+				height: 2.5rem;
+				margin: 1.75rem;
+			}
+			
+			&#connect__icon-twitter { background-color: #1DA1F2; }
+			&#connect__icon-linkedin { background-color: #0A66C2; }
+			&#connect__icon-github { background-color: #181717; }
+			&#connect__icon-spotify { background-color: #1ed760; }
+			&#connect__icon-pocket { background-color: #EF3F56; }
+			&#connect__icon-revolut { background-color: white; }
+			&#connect__icon-kofi { background-color: #FF5E5B; }
+			&#connect__icon-mail { background-color: #747474; }
 		}
 	}
-
-
 }
 /* #endregion Socials Row */
+
+
+
+
+
+
+		}
+	}
+}
