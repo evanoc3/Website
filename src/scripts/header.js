@@ -11,8 +11,13 @@ const minimizeThreshold = fontSize * 4;
 
 /** Run immediately when loaded to remove the 'No JS' solution. */
 function setup() {
+	const titleBounds = headerTitle.getBoundingClientRect();
 	const splashBounds = splashWrapper.getBoundingClientRect();
+	const colorChangeThreshold = splashBounds.bottom - (fontSize * 3.75);
 
+	if(titleBounds.bottom < colorChangeThreshold) {
+		header.classList.remove("contrast");
+	}
 	if(splashBounds.bottom > minimizeThreshold) {
 		header.classList.remove("min");
 	}
@@ -24,17 +29,17 @@ function setup() {
 function onScrollHandler() {
 	const titleBounds = headerTitle.getBoundingClientRect();
 	const splashBounds = splashWrapper.getBoundingClientRect();
-	const isDarkAlready = headerTitle.classList.contains("dark");
+	const isDarkAlready = header.classList.contains("contrast");
 	const isMinAlready = header.classList.contains("min");
 
 	const colorChangeThreshold = splashBounds.bottom - (fontSize * 3.75);
 
 	// Set the color of the title
 	if(titleBounds.bottom > colorChangeThreshold && !isDarkAlready) {
-		headerTitle.classList.add("dark");
+		header.classList.add("contrast");
 	}
 	else if(titleBounds.bottom < colorChangeThreshold && isDarkAlready) {
-		headerTitle.classList.remove("dark");
+		header.classList.remove("contrast");
 	}
 
 	// Set whether the header is in minimized form or not
@@ -58,17 +63,17 @@ function overrideNavLinks() {
 		}
 	}
 
-	const navLinks = header.querySelectorAll("a");
+	const navLinks = header.querySelectorAll(".header__link");
 
 	for(const navLink of navLinks) {
+		const targetId = navLink.href.split("#").at(-1);
+		const target = document.getElementById( targetId );
+
 		navLink.addEventListener("click", (e) => {
 			e.preventDefault();
-			
-			const targetId = navLink.href.split("#").at(-1);
-			const target = document.getElementById( targetId );
 
 			if(target) {
-				const targetY = window.scrollY + target.getBoundingClientRect().top - (fontSize * 5.4); /* - header.offsetHeight */
+				const targetY = window.scrollY + target.getBoundingClientRect().top - (fontSize * 5.4);
 				setHash(navLink.href);
 
 				window.scrollTo({top: targetY, behavior: "smooth"});

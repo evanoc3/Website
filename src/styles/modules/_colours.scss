@@ -4,6 +4,12 @@
 /* #region Font Colours */
 $font: (
 	"regular": #111,
+	"header": (
+		"link": (
+			"regular": #fff,
+			"minimized": #000
+		)
+	),
 	"footer": (
 		"regular": #a7a7a7,
 		"link": (
