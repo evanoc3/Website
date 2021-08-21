@@ -6,6 +6,7 @@
 		<meta name="viewport" content="initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover" />
 		<meta name="author" content="Evan O'Connor" />
 		<link rel="stylesheet" href="/src/styles/global.scss" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600&family=Merriweather:wght@300;400&display=swap" />
 		<link rel="stylesheet" href="/src/styles/index.scss" />
 	</head>
 
@@ -16,7 +17,8 @@
 
 			<div class="header__spacer"></div>
 
-			<a href="#get-in-touch" class="header__link">Get In Touch</a>
+			<a href="#about-me" class="header__link">About Me</a>
+			<a href="#projects" class="header__link">Projects</a>
 		</header>
 		<!-- #endregion Header -->
 
@@ -31,48 +33,85 @@
 		</div>
 		<!-- #endregion Splash Image -->
 
-		<!-- #region Socials Row -->
-		<div id="get-in-touch">
-			<h2 id="connect__title">Get In Touch</h2>
 
-			<div id="connect__row">
-				<a href="https://www.linkedin.com/in/evanoc3/" title="Linkedin" class="connect__link" id="connect__icon-linkedin">
-					<img src="/src/assets/icons/linkedin.svg" class="connect__link__icon" alt="Linkedin" />
-				</a>
-	
-				<a href="https://github.com/evanoc3" title="Github" class="connect__link" id="connect__icon-github">
-					<img src="/src/assets/icons/github.svg" class="connect__link__icon" alt="Github" />
-				</a>
-	
-				<a href="#twitter" title="Twitter" class="connect__link" id="connect__icon-twitter">
-					<img src="/src/assets/icons/twitter.svg" class="connect__link__icon" alt="Twitter" />
-				</a>
-	
-				<a href="https://getpocket.com/@a8dp9T99A9e4cd5b34gzyPUg2dd7A363894Ol4vcQyJd3fZ34297ake4UafaR250" title="Pocket" class="connect__link" id="connect__icon-pocket">
-					<img src="/src/assets/icons/pocket.svg" class="connect__link__icon" alt="Pocket" />
-				</a>
-	
-				<a href="https://open.spotify.com/user/evanoconnor99" title="Spotify" class="connect__link" id="connect__icon-spotify">
-					<img src="/src/assets/icons/spotify.svg" class="connect__link__icon" alt="Spotify" />
-				</a>
+		<main>
+			<!-- #region About Me -->
+			<section id="about-me">
+				<h2 id="about__title">About Me</h2>
 
-				<a href="https://ko-fi.com/evanoc3" title="Buy me a Coffee" class="connect__link" id="connect__icon-kofi">
-					<img src="/src/assets/icons/kofi.svg" class="connect__link__icon" alt="Buy me a Coffee" />
-				</a>
-	
-				<a href="https://revolut.me/evang5p3" title="Revolut" class="connect__link" id="connect__icon-revolut">
-					<img src="/src/assets/icons/revolut.svg" class="connect__link__icon" alt="Revolut" />
-				</a>
-	
-				<a href="mailto:evan@evanoconnor.ie" title="Email" class="connect__link" id="connect__icon-mail">
-					<img src="/src/assets/icons/mail.svg" class="connect__link__icon" alt="Email" />
-				</a>
-			</div>
-		</div>
-		<!-- #endregion Socials Row-->
-	
-		<div style="height: 50rem"></div>
+				<div id="about__wrapper">
+					<picture>
+						<source srcset="/src/assets/images/dp.webp" type="image/webp" />
+						<img src="/src/assets/images/dp.jpg" id="about__img" draggable="false" />
+					</picture>
 
+					<div>
+						<p>
+							I studied computer science &amp; IT in NUI, Galway, and graduated with honours in 2021. 
+							I am currently a macOS developer working at Cisco.
+						</p>
+	
+						<p>
+							I have interests in a wide range of fields, including web development, automation, machine learning, and fintech.
+							In my free time, I enjoy mountain climbing, reading, and playing video games.
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- #endregion About Me -->
+
+			<div class="section-separator"></div>
+
+			<!-- #region Projects Section -->
+			<section id="projects">
+				<h2 id="projects__title">Things I&apos;ve Worked On</h2>
+			</section>
+			<!-- #endregion Projects Section -->
+
+			<div class="section-separator"></div>
+
+			<!-- #region Socials Row -->
+			<section id="get-in-touch">
+				<h2 id="connect__title">Get In Touch</h2>
+
+				<div id="connect__row">
+					<a href="https://www.linkedin.com/in/evanoc3/" title="Linkedin" class="connect__link" id="connect__icon-linkedin">
+						<img src="/src/assets/icons/linkedin.svg" class="connect__link__icon" alt="Linkedin" />
+					</a>
+		
+					<a href="https://github.com/evanoc3" title="Github" class="connect__link" id="connect__icon-github">
+						<img src="/src/assets/icons/github.svg" class="connect__link__icon" alt="Github" />
+					</a>
+		
+					<a href="#twitter" title="Twitter" class="connect__link" id="connect__icon-twitter">
+						<img src="/src/assets/icons/twitter.svg" class="connect__link__icon" alt="Twitter" />
+					</a>
+		
+					<a href="https://getpocket.com/@a8dp9T99A9e4cd5b34gzyPUg2dd7A363894Ol4vcQyJd3fZ34297ake4UafaR250" title="Pocket" class="connect__link" id="connect__icon-pocket">
+						<img src="/src/assets/icons/pocket.svg" class="connect__link__icon" alt="Pocket" />
+					</a>
+		
+					<a href="https://open.spotify.com/user/evanoconnor99" title="Spotify" class="connect__link" id="connect__icon-spotify">
+						<img src="/src/assets/icons/spotify.svg" class="connect__link__icon" alt="Spotify" />
+					</a>
+
+					<a href="https://ko-fi.com/evanoc3" title="Buy me a Coffee" class="connect__link" id="connect__icon-kofi">
+						<img src="/src/assets/icons/kofi.svg" class="connect__link__icon" alt="Buy me a Coffee" />
+					</a>
+		
+					<a href="https://revolut.me/evang5p3" title="Revolut" class="connect__link" id="connect__icon-revolut">
+						<img src="/src/assets/icons/revolut.svg" class="connect__link__icon" alt="Revolut" />
+					</a>
+		
+					<a href="mailto:evan@evanoconnor.ie" title="Email" class="connect__link" id="connect__icon-mail">
+						<img src="/src/assets/icons/mail.svg" class="connect__link__icon" alt="Email" />
+					</a>
+				</div>
+			</section>
+			<!-- #endregion Socials Row-->
+		</main>
+
+	
 		<!-- #region Footer -->
 		<footer id="footer">
 			<div class="footer__column" id="footer__column-left">
@@ -89,4 +128,5 @@
 	</body>
 
 	<script src="/src/scripts/header.js" type="module"></script>
+	<script src="/src/scripts/about-me.js" type="module"></script>
 </html>

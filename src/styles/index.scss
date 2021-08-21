@@ -4,7 +4,10 @@
 @use "/src/styles/modules/colours";
 @use "/src/styles/modules/ui";
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600&display=swap');
+
+body {
+	background-color: map.get(colours.$background, "regular");
+}
 
 
 /* #region Header */
@@ -83,6 +86,7 @@
 		font-weight: 500;
 		transition: $transition-duration;
 		position: relative;
+		font-size: 1.15rem;
 	
 		&:not(:last-of-type) {
 			margin-right: 2.5rem;
@@ -91,15 +95,18 @@
 		&::before {
 			content: "";
 			position: absolute;
-			bottom: -0.1rem;
-			height: 0.1rem;
+			bottom: -0.125rem;
+			height: 0.125rem;
 			width: 100%;
 			background-color: var(--header__link-color);
 			transform: rotateY(90deg);
-			transition: transform 0.35s;
+			transition: transform 0.4s, color $transition-duration;
+			border-radius: 1px;
 		}
 
 		&:hover {
+			--header__link-color: #{map.get(colours.$palette, "purple")};
+
 			&::before {
 				transform: rotateY(0deg);
 			}
@@ -170,23 +177,80 @@
 /* #endregion Splash Image */
 
 
+/* #region About Me */
+#about-me {
+	@include ui.section;
+	@include ui.centered;
+
+	#about__title {
+		@include ui.heading;
+	}
+
+	#about__wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+
+		#about__img {
+			width: 10rem;
+			height: 10rem;
+			border-radius: 5rem;
+			margin-right: 3rem;
+			border: 0.75rem solid #{map.get(colours.$background, "secondary")};
+			box-shadow: 0.2rem 0.2rem 0.75rem rgba(0,0,0,0.125);
+			opacity: 1;
+
+			&.hidden {
+				opacity: 0;
+			}
+
+			&:not(.hidden) {
+				transition: opacity 1.5s;
+			}
+		}
+
+		p {
+			@include ui.body-text;
+		}
+	}
+}
+/* #endregion About Me */
+
+
+div.section-separator {
+	height: 2px;
+	background-color: colours.$separator;
+	width: 65%;
+	margin: 7.5rem auto 0;
+	border-radius: 1px;
+}
+
+/* #region Projects Section */
+#projects {
+	@include ui.centered;
+	@include ui.section;
+
+	#projects__title {
+		@include ui.heading;
+	}
+}
+/* #endregion Projects Section */
+
+
 /* #region Socials Row */
 #get-in-touch {
-	@include ui.secondary-box;
-	margin-top: 5rem;
+	@include ui.centered;
+	@include ui.section;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 
 	#connect__title {
-		color: map.get(colours.$font, "regular");
-		margin-bottom: 1.5rem;
-		font-family: 'Fira Sans', sans-serif;
-		font-weight: 500;
+		@include ui.heading;
 	}
 
 	#connect__row {
 		display: inline-flex;
+		width: auto;
 		max-width: 100%;
 		flex-flow: row wrap;
 		justify-content: flex-start;
@@ -225,7 +289,10 @@
 
 /* #region Footer */
 #footer {
-	@include ui.secondary-box;
+	background-color: map.get(colours.$background, "secondary");
+	box-shadow: inset 0 1rem 1rem -0.5rem rgba(0,0,0,0.075);
+	padding: 2rem 3rem;
+	color: map.get(colours.$font, "footer", "regular");
 	margin-top: 5rem;
 	display: flex;
 	flex-flow: column nowrap;

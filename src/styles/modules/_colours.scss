@@ -22,7 +22,7 @@ $font: (
 
 /* #region Background Colours */
 $background: (
-	"regular": #fff,
+	"regular": #f8f8f8,
 	"secondary": #f3f3f3
 );
 /* #endregion Background Colours */
@@ -34,4 +34,6 @@ $palette: (
 	"purple": #82688b,
 	"gold": #f0b066,
 	"pink": #dd9394
-)
+);
+
+$separator: #e2e2e2;
