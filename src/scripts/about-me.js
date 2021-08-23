@@ -18,7 +18,7 @@ function setup() {
 function onScrollHandler() {
 	const coords = container.getBoundingClientRect();
 
-	if(!imageIsVisible && coords.top > 0 && coords.top < (window.innerHeight * 0.6)) {
+	if(!imageIsVisible && coords.top > 0 && coords.top < (window.innerHeight * 0.65)) {
 		imageIsVisible = true;
 		window.removeEventListener("scroll", onScrollHandler)
 		img.classList.remove("hidden");

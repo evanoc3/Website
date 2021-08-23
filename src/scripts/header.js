@@ -1,58 +1,54 @@
 "use strict";
 
 
-// Constants
+// DOM Elements
 const header = document.getElementById("header");
 const headerTitle = document.getElementById("header__title");
+const navMenuButton = document.getElementById("header__nav__button");
+const navContainer = document.getElementById("header__nav__links");
 const splashWrapper = document.getElementById("splash__wrapper");
-const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-const minimizeThreshold = fontSize * 4;
+
+// Variables
+let fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+let isSmallScreen = window.matchMedia("(min-width: 415px").matches;
 
 
-/** Run immediately when loaded to remove the 'No JS' solution. */
-function setup() {
-	const titleBounds = headerTitle.getBoundingClientRect();
-	const splashBounds = splashWrapper.getBoundingClientRect();
-	const colorChangeThreshold = splashBounds.bottom - (fontSize * 3.75);
 
-	if(titleBounds.bottom < colorChangeThreshold) {
-		header.classList.remove("contrast");
-	}
-	if(splashBounds.bottom > minimizeThreshold) {
-		header.classList.remove("min");
-	}
+function resizeHandler() {
+	fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+	isSmallScreen = window.matchMedia("(min-width: 415px").matches;
+
+	scrollHandler();
 }
 
 
-
-/** Establishes an event listener on scroll events to detect when the user has scrolled past the thresholds, and cause certain style changes to the header. */
-function onScrollHandler() {
-	const titleBounds = headerTitle.getBoundingClientRect();
-	const splashBounds = splashWrapper.getBoundingClientRect();
+function scrollHandler() {
+	const titleY = headerTitle.getBoundingClientRect().bottom;
+	const splashY = splashWrapper.getBoundingClientRect().bottom;
 	const isDarkAlready = header.classList.contains("contrast");
 	const isMinAlready = header.classList.contains("min");
 
-	const colorChangeThreshold = splashBounds.bottom - (fontSize * 3.75);
+	const minimizeThreshold = isSmallScreen ? (fontSize * 3) : (fontSize * 4);
+	const contrastThreshold = isSmallScreen ? (splashY - (fontSize * 3)) : (splashY - (fontSize * 3.75));
 
 	// Set the color of the title
-	if(titleBounds.bottom > colorChangeThreshold && !isDarkAlready) {
+	if(titleY > contrastThreshold && !isDarkAlready) {
 		header.classList.add("contrast");
 	}
-	else if(titleBounds.bottom < colorChangeThreshold && isDarkAlready) {
+	else if(titleY < contrastThreshold && isDarkAlready) {
 		header.classList.remove("contrast");
 	}
 
 	// Set whether the header is in minimized form or not
-	if(splashBounds.bottom < minimizeThreshold  && !isMinAlready) {
+	if(splashY < minimizeThreshold && !isMinAlready) {
 		header.classList.add("min");
 	}
-	else if(splashBounds.bottom > minimizeThreshold && isMinAlready) {
+	else if(splashY > minimizeThreshold && isMinAlready) {
 		header.classList.remove("min");
 	}
 }
 
 
-/** Overrides the default link behaviour of the relative links in the nav bar to provide a smooth scroll to the target element.  */
 function overrideNavLinks() {
 	function setHash(newHash) {
 		if(history.pushState) {
@@ -83,6 +79,8 @@ function overrideNavLinks() {
 }
 
 
-setup();
-window.addEventListener("scroll", onScrollHandler);
+window.addEventListener("resize", resizeHandler);
+window.addEventListener("scroll", scrollHandler);
+navMenuButton.addEventListener("click", () => navContainer.classList.toggle("hidden"));
+scrollHandler();
 overrideNavLinks();

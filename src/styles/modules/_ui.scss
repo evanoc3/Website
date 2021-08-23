@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "/src/styles/modules/breakpoints";
 @use "/src/styles/modules/colours";
 
 
@@ -13,9 +14,15 @@
 
 
 @mixin centered {
-	width: 55%;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
+	padding-left: 2rem;
+	padding-right: 2rem;
+
+	@media(min-width: breakpoints.$tablet) {
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 
@@ -29,4 +36,11 @@
 @mixin section {
 	margin-top: 5rem;
 	padding-top: 2.5rem;
+}
+
+
+@mixin remove-button-defaults {
+	border: none;
+	background: none;
+	appearance: none;
 }
