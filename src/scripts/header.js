@@ -59,7 +59,7 @@ function overrideNavLinks() {
 		}
 	}
 
-	const navLinks = header.querySelectorAll(".header__link");
+	const navLinks = navContainer.querySelectorAll("a.header__link");
 
 	for(const navLink of navLinks) {
 		const targetId = navLink.href.split("#").at(-1);
