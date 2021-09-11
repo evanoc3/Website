@@ -293,6 +293,7 @@ $header-transition-duration: 0.5s;
 
 main {
 	width: 100%;
+	padding-bottom: 7.5rem;
 }
 
 
@@ -400,6 +401,7 @@ div.section-separator {
 		display: inline-flex;
 		width: auto;
 		max-width: 100%;
+		margin-top: 1rem;
 		flex-flow: row wrap;
 		justify-content: center;
 
@@ -421,14 +423,12 @@ div.section-separator {
 				margin: 1.75rem;
 			}
 			
-			&#connect__icon-reddit { background-color: #FF4500; }
 			&#connect__icon-linkedin { background-color: #0A66C2; }
 			&#connect__icon-github { background-color: #181717; }
+			&#connect__icon-kofi { background-color: #FF5E5B; }
 			&#connect__icon-spotify { background-color: #1ed760; }
 			&#connect__icon-pocket { background-color: #EF3F56; }
-			&#connect__icon-revolut { background-color: white; }
-			&#connect__icon-kofi { background-color: #FF5E5B; }
-			&#connect__icon-mail { background-color: #747474; }
+			&#connect__icon-mail { background-color: #b1b1b1; }
 		}
 	}
 }
@@ -448,7 +448,6 @@ div.section-separator {
 	background-color: map.get(colours.$background, "secondary");
 	box-shadow: inset 0 1rem 1rem -0.5rem rgba(0,0,0,0.075);
 	color: map.get(colours.$font, "footer", "regular");
-	margin-top: 5rem;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: flex-start;

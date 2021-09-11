@@ -1,5 +1,8 @@
 "use strict";
 
+import smoothscroll from "smoothscroll-polyfill";
+smoothscroll.polyfill();
+
 
 // DOM Elements
 const header = document.getElementById("header");
@@ -62,11 +65,14 @@ function overrideNavLinks() {
 	const navLinks = navContainer.querySelectorAll("a.header__link");
 
 	for(const navLink of navLinks) {
-		const targetId = navLink.href.split("#").at(-1);
-		const target = document.getElementById( targetId );
+		const hrefParts = navLink.href.split("#");
+		const targetId = hrefParts[hrefParts.length - 1];
+
+		const target = document.getElementById(targetId);
 
 		navLink.addEventListener("click", (e) => {
 			e.preventDefault();
+			e.stopPropagation();
 
 			if(target) {
 				const targetY = window.scrollY + target.getBoundingClientRect().top - (fontSize * 5.4);
@@ -74,7 +80,9 @@ function overrideNavLinks() {
 
 				window.scrollTo({top: targetY, behavior: "smooth"});
 			}
-		})
+
+			return false;
+		});
 	}
 }
 

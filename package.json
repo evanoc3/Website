@@ -1,5 +1,12 @@
 {
   "author": "Evan O'Connor <evanoc3@gmail.com>",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0",
+    "sass": "^1.37.5",
+    "smoothscroll-polyfill": "^0.4.4"
+  },
   "engines": {
     "node": ">=16.6.2",
     "npm": ">=7.20.3"
@@ -17,11 +24,5 @@
     "deploy": "rsync -av ./build/ VPS:/var/www/evanoconnor.ie/ --delete",
     "deploy:config": "rsync -av ./evanoconnor.ie.conf VPS:/etc/nginx/sites-available/"
   },
-  "version": "0.2.0",
-  "devDependencies": {
-    "@parcel/transformer-image": "^2.0.0-rc.0",
-    "@parcel/transformer-sass": "^2.0.0-rc.0",
-    "parcel": "^2.0.0-rc.0",
-    "sass": "^1.37.5"
-  }
+  "version": "0.2.0"
 }
