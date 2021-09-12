@@ -1,8 +1,5 @@
 "use strict";
 
-import smoothscroll from "smoothscroll-polyfill";
-smoothscroll.polyfill();
-
 
 // DOM Elements
 const header = document.getElementById("header");
@@ -72,7 +69,6 @@ function overrideNavLinks() {
 
 		navLink.addEventListener("click", (e) => {
 			e.preventDefault();
-			e.stopPropagation();
 
 			if(target) {
 				const targetY = window.scrollY + target.getBoundingClientRect().top - (fontSize * 5.4);
@@ -80,8 +76,6 @@ function overrideNavLinks() {
 
 				window.scrollTo({top: targetY, behavior: "smooth"});
 			}
-
-			return false;
 		});
 	}
 }

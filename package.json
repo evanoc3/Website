@@ -4,12 +4,7 @@
     "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-sass": "^2.0.0-rc.0",
     "parcel": "^2.0.0-rc.0",
-    "sass": "^1.37.5",
-    "smoothscroll-polyfill": "^0.4.4"
-  },
-  "engines": {
-    "node": ">=16.6.2",
-    "npm": ">=7.20.3"
+    "sass": "^1.37.5"
   },
   "license": "MIT",
   "name": "@evanoc3/website",
