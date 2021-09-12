@@ -19,5 +19,5 @@
     "deploy": "rsync -av ./build/ VPS:/var/www/evanoconnor.ie/ --delete",
     "deploy:config": "rsync -av ./evanoconnor.ie.conf VPS:/etc/nginx/sites-available/"
   },
-  "version": "0.2.0"
+  "version": "0.2.1"
 }
